@@ -1,0 +1,6 @@
+{
+  "name": "CLEV PRODUCTIONS",
+  "description": "Sleek portfolio and interactive demo center for CLEV PRODUCTIONS™, specializing in bespoke AI chatbots with file uploading, voice notes, custom websites, and interactive games.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

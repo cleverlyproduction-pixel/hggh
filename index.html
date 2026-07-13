@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Google AI Studio App</title>
+    <script>
+      // Global shims for process and event listeners to prevent runtime errors in some environments
+      (function() {
+        var mockProcess = {
+          env: { NODE_ENV: 'development' },
+          on: function() { return this; },
+          emit: function() { return this; },
+          addListener: function() { return this; },
+          removeListener: function() { return this; },
+          once: function() { return this; },
+          off: function() { return this; },
+          cwd: function() { return '/'; },
+          browser: true
+        };
+
+        try {
+          if (typeof window !== 'undefined') {
+            if (!window.process) {
+              Object.defineProperty(window, 'process', {
+                get: function() { return mockProcess; },
+                set: function(val) {
+                  if (val && typeof val === 'object') {
+                    for (var k in val) {
+                      mockProcess[k] = val[k];
+                    }
+                  }
+                },
+                configurable: true
+              });
+            } else {
+              var p = window.process;
+              if (!p.env) p.env = { NODE_ENV: 'development' };
+              if (!p.on) p.on = function() { return this; };
+              if (!p.emit) p.emit = function() { return this; };
+              if (!p.addListener) p.addListener = function() { return this; };
+              if (!p.removeListener) p.removeListener = function() { return this; };
+              if (!p.once) p.once = function() { return this; };
+              if (!p.off) p.off = function() { return this; };
+              if (!p.cwd) p.cwd = function() { return '/'; };
+            }
+            window.global = window;
+          }
+        } catch (e) {
+          console.warn("Process shim warning:", e);
+        }
+
+        try {
+          if (typeof globalThis !== 'undefined' && !globalThis.process) {
+            Object.defineProperty(globalThis, 'process', {
+              get: function() { return window.process || mockProcess; },
+              set: function(val) {
+                if (window.process) {
+                  if (val && typeof val === 'object') {
+                    for (var k in val) {
+                      window.process[k] = val[k];
+                    }
+                  }
+                }
+              },
+              configurable: true
+            });
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
