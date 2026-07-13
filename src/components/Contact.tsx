@@ -37,9 +37,9 @@ export default function Contact() {
     );
 
     // Desktop Friendly Gmail Web Direct Compose
-    const gmailWebUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=cleverlyproduction@gmail.com&su=${subject}&body=${body}`;
+    const gmailWebUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=clevrlyproductions@gmail.com&su=${subject}&body=${body}`;
     // Fallback standard mailto
-    const mailtoUrl = `mailto:cleverlyproduction@gmail.com?subject=${subject}&body=${body}`;
+    const mailtoUrl = `mailto:clevrlyproductions@gmail.com?subject=${subject}&body=${body}`;
 
     // Try opening Gmail Web first, then mailto as fallback
     setTimeout(() => {
@@ -52,7 +52,7 @@ export default function Contact() {
   const directHiCompose = () => {
     const subject = encodeURIComponent("Hi CLEV PRODUCTIONS!");
     const body = encodeURIComponent("Hi CLEV PRODUCTIONS,\n\nI wanted to reach out and say hi! I am interested in building a chatbot / website / game with you.");
-    const gmailWebUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=cleverlyproduction@gmail.com&su=${subject}&body=${body}`;
+    const gmailWebUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=clevrlyproductions@gmail.com&su=${subject}&body=${body}`;
     
     window.open(gmailWebUrl, '_blank');
   };
@@ -79,7 +79,7 @@ export default function Contact() {
               </h2>
               
               <p className="text-gray-400 font-sans text-sm sm:text-base leading-relaxed">
-                Have a customized chatbot, high-fidelity website, or playable web game in mind? Say hi! When you tap submit or our direct email button, it opens Gmail pre-drafted to <strong className="text-white">cleverlyproduction@gmail.com</strong>.
+                Have a customized chatbot, high-fidelity website, or playable web game in mind? Say hi! When you tap submit or our direct email button, it opens Gmail pre-drafted to <strong className="text-white">clevrlyproductions@gmail.com</strong>.
               </p>
             </div>
 
@@ -92,7 +92,7 @@ export default function Contact() {
               <div className="space-y-1">
                 <span className="text-xs text-gray-500">Corporate Email:</span>
                 <span className="text-base sm:text-lg font-mono font-bold text-white block truncate select-all">
-                  cleverlyproduction@gmail.com
+                  clevrlyproductions@gmail.com
                 </span>
               </div>
 
@@ -229,7 +229,7 @@ export default function Contact() {
                   <div className="space-y-2">
                     <h3 className="font-display font-extrabold text-white text-xl">Draft Created!</h3>
                     <p className="text-xs sm:text-sm text-gray-400 max-w-sm mx-auto leading-relaxed">
-                      We have compiled your data and drafted your inquiry template. Redirecting you to compose in Gmail to complete your message to <strong className="text-white">cleverlyproduction@gmail.com</strong>...
+                      We have compiled your data and drafted your inquiry template. Redirecting you to compose in Gmail to complete your message to <strong className="text-white">clevrlyproductions@gmail.com</strong>...
                     </p>
                   </div>
 
